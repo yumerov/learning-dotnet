@@ -5,6 +5,7 @@ public class Person
     public string? Name;
     public readonly string HomePlanet = "Earth";
     public DateTimeOffset Born;
+    public List<Person> Children = [];
 
     #region Properties: Methods to get and/or set data or state.
     // A readonly property defined using C# 1 to 5 syntax.
@@ -62,4 +63,15 @@ public class Person
         }
     }
 
+    #region Indexers: Properties that use array syntax to access them.
+    public Person this[int index]
+    {
+        get => Children[index]; // Pass on to the List<T> indexer.
+        set => Children[index] = value;
+    }
+    
+    // A read-only string indexer.
+    public Person? this[string name] => Children.Find(p => p.Name == name);
+
+    #endregion
 }
