@@ -67,3 +67,14 @@ Book book = new()
     Title = "C# 12 and .NET 8 - Modern Cross-Platform Development Fundamentals"
 };
 WriteLine("{0}: {1} written by {2} has {3:N0} pages.", book.Isbn, book.Title, book.Author, book.PageCount);
+
+
+WriteLine("Methods:");
+bob.WriteToConsole();
+WriteLine(bob.GetOrigin());
+WriteLine(bob.SayHello());
+WriteLine(bob.SayHelloTo("Emily"));
+
+WriteLine(bob.OptionalParameters());
+WriteLine(bob.OptionalParameters("Jump!", 98.5));
+WriteLine(bob.OptionalParameters(number: 52.7, command: "Hide!"));

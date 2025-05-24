@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\Peop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryModern", "PacktLibraryModern\PacktLibraryModern.csproj", "{EB68AF6A-87F1-43DB-A279-12AA4388664B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parameters", "HowParametersArePassed \Parameters.csproj", "{46FE8FF9-BDFF-4641-B6ED-853A6A18B7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partial", "Partial\Partial.csproj", "{E5E852B9-0366-4365-9274-C09A16FBCB43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{EB68AF6A-87F1-43DB-A279-12AA4388664B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB68AF6A-87F1-43DB-A279-12AA4388664B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB68AF6A-87F1-43DB-A279-12AA4388664B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FE8FF9-BDFF-4641-B6ED-853A6A18B7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FE8FF9-BDFF-4641-B6ED-853A6A18B7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FE8FF9-BDFF-4641-B6ED-853A6A18B7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FE8FF9-BDFF-4641-B6ED-853A6A18B7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E852B9-0366-4365-9274-C09A16FBCB43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E852B9-0366-4365-9274-C09A16FBCB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E852B9-0366-4365-9274-C09A16FBCB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E852B9-0366-4365-9274-C09A16FBCB43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
