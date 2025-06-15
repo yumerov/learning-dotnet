@@ -78,3 +78,27 @@ WriteLine(bob.SayHelloTo("Emily"));
 WriteLine(bob.OptionalParameters());
 WriteLine(bob.OptionalParameters("Jump!", 98.5));
 WriteLine(bob.OptionalParameters(number: 52.7, command: "Hide!"));
+
+
+// An array containing a mix of passenger types.
+Passanger[] passengers = [
+    new FirstClassPassenger { AirMiles = 1_419, Name = "Suman" },
+    new FirstClassPassenger { AirMiles = 16_562, Name = "Lucy" },
+    new BusinessClassPassenger { Name = "Janice" },
+    new CoachClassPassenger { CarryOnKg = 25.7, Name = "Dave" },
+    new CoachClassPassenger { CarryOnKg = 0, Name = "Amit" }
+];
+foreach (Passanger passenger in passengers)
+{
+    decimal flightCost = passenger switch
+    {
+        FirstClassPassenger { AirMiles: > 35_000 } => 1_500M, // dotnet 9
+        FirstClassPassenger p when p.AirMiles > 15_000 => 1_750M, // dotnet 8
+        FirstClassPassenger _                         => 2_000M,
+        BusinessClassPassenger _                      => 1_000M,
+        CoachClassPassenger p when p.CarryOnKg < 10.0 => 500M,
+        CoachClassPassenger _                         => 650M,
+        _                                             => 800M
+    };
+    WriteLine($"Flight costs {flightCost:C} for {passenger}");
+}
