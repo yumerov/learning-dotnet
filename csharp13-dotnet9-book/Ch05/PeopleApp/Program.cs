@@ -102,3 +102,31 @@ foreach (Passanger passenger in passengers)
     };
     WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
+
+ImmutablePerson jeff = new()
+{
+    FirstName = "Jeff",
+    LastName = "Winger"
+};
+// jeff.FirstName = "Geoff"; // Error CS8852 : Init-only property or indexer 'ImmutablePerson.FirstName' can only be assigned in an object initializer, or on 'this' or 'base' in an instance constructor or an 'init' accessor.
+
+ImmutableVehicle car = new()
+{
+    Brand = "Mazda MX-5 RF",
+    Color = "Soul Red Crystal Metallic",
+    Wheels = 4
+};
+ImmutableVehicle repaintedCar = car with { Color = "Polymetal Grey Metallic" };
+WriteLine($"Original car color was {car.Color}.");
+WriteLine($"New car color is {repaintedCar.Color}.");
+
+AnimalClass ac1 = new() { Name = "Rex" };
+AnimalClass ac2 = new() { Name = "Rex" };
+WriteLine($"ac1 == ac2: {ac1 == ac2}"); // bysed on reference-memory address
+AnimalRecord ar1 = new() { Name = "Rex" };
+AnimalRecord ar2 = new() { Name = "Rex" };
+WriteLine($"ar1 == ar2: {ar1 == ar2}"); // based on values
+
+ImmutableAnimal oscar = new("Oscar", "Labrador");
+var (who, what) = oscar; // Calls the Deconstruct method.
+WriteLine($"{who} is a {what}.");
