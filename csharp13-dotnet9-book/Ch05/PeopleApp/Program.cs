@@ -130,3 +130,11 @@ WriteLine($"ar1 == ar2: {ar1 == ar2}"); // based on values
 ImmutableAnimal oscar = new("Oscar", "Labrador");
 var (who, what) = oscar; // Calls the Deconstruct method.
 WriteLine($"{who} is a {what}.");
+
+Headset vp = new("Apple", "Vision Pro");
+WriteLine($"{vp.ProductName} is made by {vp.Manufacturer}.");
+
+Headset holo = new();
+WriteLine($"{holo.ProductName} is made by {holo.Manufacturer}.");
+Headset mq = new() { Manufacturer = "Meta", ProductName = "Quest 3" };
+WriteLine($"{mq.ProductName} is made by {mq.Manufacturer}.");
