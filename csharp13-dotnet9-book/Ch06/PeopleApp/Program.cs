@@ -59,4 +59,24 @@ var baby4 = zillah * lamech;
 baby4.Name = "Naamah";
 lamech.WriteChildrenToConsole();
 
+Person?[] people =
+{
+    null,
+    new() { Name = "Simon" },
+    new() { Name = "Jenny" },
+    new() { Name = "Adam" },
+    new() { Name = null },
+    new() { Name = "Richard" }
+};
 
+WriteLine("Initial list of people:");
+foreach (var person in people) WriteLine(person is null ? "null person" : person.Name ?? "null name");
+Array.Sort(people);
+Write("After sorting using Person's IComparable implementation:");
+foreach (var person in people) WriteLine(person is null ? "null person" : person.Name ?? "null name");
+
+WriteLine("[Comparing objects using a separate class] Initial list of people:");
+foreach (var person in people) WriteLine(person is null ? "null person" : person.Name ?? "null name");
+Array.Sort(people, new PersonComparer());
+Write("[Comparing objects using a separate class] After sorting using Person's IComparable implementation:");
+foreach (var person in people) WriteLine(person is null ? "null person" : person.Name ?? "null name");

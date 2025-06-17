@@ -1,6 +1,6 @@
 namespace Packt.Shared;
 
-public class Person
+public class Person: IComparable<Person>
 {
     # region Properties
     public string? Name { get; set; }
@@ -124,4 +124,14 @@ public class Person
     /// <returns></returns>
     public static Person operator *(Person p1, Person p2) => Procreate(p1, p2);
     #endregion
+
+    public int CompareTo(Person? other)
+    {
+        if (other is null) return -1;
+        if (Name is not null && other.Name is not null) return string.Compare(Name, other.Name, StringComparison.Ordinal);
+        if (Name is not null && other.Name is null) return -1;
+        if (Name is null && other.Name is not null) return 1;
+
+        return 0;
+    }
 }
