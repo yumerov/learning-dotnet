@@ -91,3 +91,30 @@ var player = new DvdPlayer();
 player.Play();
 player.Pause();
 ((IPlayable)player).Stop();
+
+int? nullableInt = null;
+Nullable<int> nullableInt2 = null;
+WriteLine($"int? -> value: {nullableInt}; default: {nullableInt.GetValueOrDefault()}");
+WriteLine($"Nullable<int> -> value: {nullableInt2}; default: {nullableInt2.GetValueOrDefault()}");
+
+Address address = new(city: "London")
+{
+    Building = null,
+    Street = null!,
+    Region = "UK"
+};
+WriteLine($"building length: {address.Building?.Length}");
+if (address.Street is not null)
+{
+    WriteLine(address.Street.Length);
+}
+
+try
+{
+    string? nullableString = null;
+    ArgumentNullException.ThrowIfNull(nullableString);
+}
+catch (ArgumentNullException exception)
+{
+    WriteLine($"exception: {exception.Message}");
+}
