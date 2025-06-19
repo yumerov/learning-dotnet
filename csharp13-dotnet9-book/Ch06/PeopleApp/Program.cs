@@ -80,3 +80,14 @@ foreach (var person in people) WriteLine(person is null ? "null person" : person
 Array.Sort(people, new PersonComparer());
 Write("[Comparing objects using a separate class] After sorting using Person's IComparable implementation:");
 foreach (var person in people) WriteLine(person is null ? "null person" : person.Name ?? "null name");
+
+Human human = new();
+human.Lose();
+((IGamePlayer)human).Lose();
+IGamePlayer gamePlayer = human;
+gamePlayer.Lose();
+
+var player = new DvdPlayer();
+player.Play();
+player.Pause();
+((IPlayable)player).Stop();
