@@ -118,3 +118,14 @@ catch (ArgumentNullException exception)
 {
     WriteLine($"exception: {exception.Message}");
 }
+
+Employee john = new()
+{
+    Name = "John Jones",
+    Born = new DateTimeOffset(year: 1990, month: 7, day: 28,
+        hour: 0, minute: 0, second: 0, offset: TimeSpan.Zero)
+};
+john.EmployeeCode = "JJ001";
+john.HireDate = new(year: 2014, month: 11, day: 23);
+john.WriteToConsole();
+WriteLine($"john: {john.ToString()}");

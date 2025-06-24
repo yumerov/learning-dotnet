@@ -52,6 +52,11 @@ public class Person: IComparable<Person>
             WriteLine($"{Name} is a singleton.");
         }
     }
+    
+    public virtual void Sing()
+    {
+        WriteLine("Singing...");
+    }
     # endregion
     
     # region Static
