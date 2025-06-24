@@ -57,6 +57,16 @@ public class Person: IComparable<Person>
     {
         WriteLine("Singing...");
     }
+    
+    public void TimeTravel(DateTime when)
+    {
+        if (when <= Born)
+        {
+            throw new PersonException("If you travel back in time to a date earlier than your own birth, then the universe will explode!");
+        }
+
+        WriteLine($"Welcome to {when:yyyy}!");
+    }
     # endregion
     
     # region Static
