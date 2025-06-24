@@ -129,3 +129,24 @@ john.EmployeeCode = "JJ001";
 john.HireDate = new(year: 2014, month: 11, day: 23);
 john.WriteToConsole();
 WriteLine($"john: {john.ToString()}");
+
+Employee aliceInEmployee = new() { Name = "Alice", EmployeeCode = "AA123" };
+Person aliceInPerson = aliceInEmployee;
+aliceInEmployee.WriteToConsole();
+aliceInPerson.WriteToConsole();
+WriteLine(aliceInEmployee.ToString());
+WriteLine(aliceInPerson.ToString());
+
+
+Employee explicitAlice = (Employee)aliceInPerson;
+if (aliceInPerson is Employee explicitAlice2)
+{
+    WriteLine($"{nameof(explicitAlice2)} is an Employee.");
+}
+
+Employee? aliceAsEmployee = aliceInPerson as Employee;
+if (aliceAsEmployee is not null)
+{
+    WriteLine($"{nameof(aliceInPerson)} as an Employee.");
+}
+
