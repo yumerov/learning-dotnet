@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibrary", "PacktLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{A24258D0-95A9-453F-846C-C72E569C51D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise_Inheritance", "Exercise_Inheritance\Exercise_Inheritance.csproj", "{F32D5C31-E880-4C13-BA9B-92BE606174B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A24258D0-95A9-453F-846C-C72E569C51D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A24258D0-95A9-453F-846C-C72E569C51D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A24258D0-95A9-453F-846C-C72E569C51D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32D5C31-E880-4C13-BA9B-92BE606174B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32D5C31-E880-4C13-BA9B-92BE606174B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32D5C31-E880-4C13-BA9B-92BE606174B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32D5C31-E880-4C13-BA9B-92BE606174B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
