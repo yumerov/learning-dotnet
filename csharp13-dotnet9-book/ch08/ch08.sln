@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRandom", "Workin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithGuid", "WorkingWithGuid\WorkingWithGuid.csproj", "{F06A0E0E-C030-4CF4-8CBE-1AFDFB4BE3D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithText", "WorkingWithText\WorkingWithText.csproj", "{EBECCF58-8598-41A9-B4CC-7DD1BB1DF482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithCharacters", "WorkingWithCharacters \WorkingWithCharacters.csproj", "{D3D7D4D5-CA2F-4E44-BDCB-35EEE48372E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{F06A0E0E-C030-4CF4-8CBE-1AFDFB4BE3D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F06A0E0E-C030-4CF4-8CBE-1AFDFB4BE3D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F06A0E0E-C030-4CF4-8CBE-1AFDFB4BE3D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBECCF58-8598-41A9-B4CC-7DD1BB1DF482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBECCF58-8598-41A9-B4CC-7DD1BB1DF482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBECCF58-8598-41A9-B4CC-7DD1BB1DF482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBECCF58-8598-41A9-B4CC-7DD1BB1DF482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D7D4D5-CA2F-4E44-BDCB-35EEE48372E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D7D4D5-CA2F-4E44-BDCB-35EEE48372E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D7D4D5-CA2F-4E44-BDCB-35EEE48372E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D7D4D5-CA2F-4E44-BDCB-35EEE48372E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
