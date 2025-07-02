@@ -1,6 +1,8 @@
 ﻿using static System.Console;
 using StringDictionary = System.Collections.Generic.Dictionary<string, string>;
 
+WriteLine();
+WriteLine("Lists:");
 List<string> cities = new();
 cities.Add("London");
 cities.Add("Paris");
@@ -26,6 +28,8 @@ cities.RemoveAt(1);
 cities.Remove("Milan");
 OutputCollection("After removing two cities", cities);
 
+WriteLine();
+WriteLine("Dictionaries:");
 // Declare a dictionary without the alias.
 // Dictionary<string, string> keywords = new();
 // Use the alias to declare the dictionary.
@@ -59,3 +63,47 @@ foreach (KeyValuePair<string, string> item in keywords)
 // Look up a value using a key.
 string key = "long";
 WriteLine($"The definition of {key} is {keywords[key]}.");
+
+WriteLine();
+WriteLine("Sets:");
+HashSet<string> names = [];
+foreach (string name in new[] { "Adam", "Barry", "Charlie", "Barry" })
+{
+    bool added = names.Add(name);
+    WriteLine($"{name} was added: {added}.");
+}
+WriteLine($"names set: {string.Join(',', names)}.");
+
+WriteLine();
+WriteLine("Q:");
+Queue<string> coffee = new();
+coffee.Enqueue("Damir");
+coffee.Enqueue("Andrea");
+coffee.Enqueue("Ronald");
+coffee.Enqueue("Amin");
+coffee.Enqueue("Irina");
+OutputCollection("Initial queue from front to back", coffee);
+string served = coffee.Dequeue();
+WriteLine($"Served: {served}.");
+served = coffee.Dequeue();
+WriteLine($"Served: {served}.");
+OutputCollection("Current queue from front to back", coffee);
+WriteLine($"{coffee.Peek()} is next in line.");
+OutputCollection("Current queue from front to back", coffee);
+
+WriteLine();
+WriteLine("PQ:");
+PriorityQueue<string, int> vaccine = new();
+vaccine.Enqueue("Pamela", 1);
+vaccine.Enqueue("Rebecca", 3);
+vaccine.Enqueue("Juliet", 2);
+vaccine.Enqueue("Ian", 1);
+OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
+WriteLine($"{vaccine.Dequeue()} has been vaccinated.");
+WriteLine($"{vaccine.Dequeue()} has been vaccinated.");
+OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
+WriteLine($"{vaccine.Dequeue()} has been vaccinated.");
+WriteLine("Adding Mark to queue with priority 2.");
+vaccine.Enqueue("Mark", 2);
+WriteLine($"{vaccine.Peek()} will be next to be vaccinated.");
+OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
