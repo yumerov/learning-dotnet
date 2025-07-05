@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRegularExpressio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithCollections", "WorkingWithCollections\WorkingWithCollections.csproj", "{B14A4048-2C0D-4B2E-A897-F5E9AFCCED6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRanges", "WorkingWithRanges\WorkingWithRanges.csproj", "{5B9B0CA9-C1F6-4F7A-9016-15C7D32BD3C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{B14A4048-2C0D-4B2E-A897-F5E9AFCCED6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B14A4048-2C0D-4B2E-A897-F5E9AFCCED6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B14A4048-2C0D-4B2E-A897-F5E9AFCCED6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9B0CA9-C1F6-4F7A-9016-15C7D32BD3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9B0CA9-C1F6-4F7A-9016-15C7D32BD3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9B0CA9-C1F6-4F7A-9016-15C7D32BD3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9B0CA9-C1F6-4F7A-9016-15C7D32BD3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
