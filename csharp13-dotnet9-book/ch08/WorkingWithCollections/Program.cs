@@ -107,3 +107,12 @@ WriteLine("Adding Mark to queue with priority 2.");
 vaccine.Enqueue("Mark", 2);
 WriteLine($"{vaccine.Peek()} will be next to be vaccinated.");
 OutputPQ("Current queue for vaccination", vaccine.UnorderedItems);
+
+int[] row0 = [1, 2, 3];
+int[] row1 = [4, 5];
+int[] row2 = [6, 7, 8, 9];
+int[] combinedRows = [..row0, ..row1, ..row2, 10];
+foreach (var number in combinedRows)
+{
+    Write($"{number}, ");
+}
