@@ -48,3 +48,25 @@ finally
     }
 }
 OutputFileInfo(xmlFile);
+
+// Using "using"
+SectionTitle("[using] Writing to XML streams");
+string xmlFile2 = Combine(CurrentDirectory, "streams2.xml");
+using FileStream xmlFileStream2 = File.Create(xmlFile2);
+using XmlWriter xml2 = XmlWriter.Create(xmlFileStream2, new XmlWriterSettings { Indent = true });
+
+try
+{
+    xml2.WriteStartDocument();
+    xml2.WriteStartElement("callsigns");
+    foreach (string item in Viper.Callsigns)
+    {
+        xml2.WriteElementString("callsign", item);
+    }
+    xml2.WriteEndElement();
+}
+catch (Exception ex)
+{
+    WriteLine($"{ex.GetType()} says {ex.Message}");
+}
+OutputFileInfo(xmlFile);
