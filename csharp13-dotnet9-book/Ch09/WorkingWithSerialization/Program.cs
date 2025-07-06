@@ -1,5 +1,6 @@
 ﻿using System.Xml.Serialization;
 using WorkingWithSerialization;
+using static System.Console;
 using static System.Environment;
 using static System.IO.Path;
 
@@ -44,3 +45,15 @@ using (FileStream stream = File.Create(path))
     xmlSerializer.Serialize(stream, people);
 }
 OutputFileInfo(path);
+
+SectionTitle("Deserializing XML files");
+using (FileStream xmlLoad = File.Open(path, FileMode.Open))
+{
+    if (xmlSerializer.Deserialize(xmlLoad) is List<Person> loadedPeople)
+    {
+        foreach (Person p in loadedPeople)
+        {
+            WriteLine("{0} has {1} children.", p.LastName, p.Children?.Count ?? 0);
+        }
+    }
+}
