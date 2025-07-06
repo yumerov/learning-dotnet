@@ -70,3 +70,7 @@ catch (Exception ex)
     WriteLine($"{ex.GetType()} says {ex.Message}");
 }
 OutputFileInfo(xmlFile);
+
+SectionTitle("Compressing streams");
+Compress(algorithm: "gzip");
+Compress(algorithm: "brotli");
