@@ -3,6 +3,8 @@ using WorkingWithSerialization;
 using static System.Console;
 using static System.Environment;
 using static System.IO.Path;
+using Newtonsoft.Json;
+using FastJson = System.Text.Json.JsonSerializer;
 
 List<Person> people =
 [
@@ -44,6 +46,7 @@ using (FileStream stream = File.Create(path))
 {
     xmlSerializer.Serialize(stream, people);
 }
+
 OutputFileInfo(path);
 
 SectionTitle("Deserializing XML files");
@@ -51,9 +54,32 @@ using (FileStream xmlLoad = File.Open(path, FileMode.Open))
 {
     if (xmlSerializer.Deserialize(xmlLoad) is List<Person> loadedPeople)
     {
-        foreach (Person p in loadedPeople)
+        foreach (Person person in loadedPeople)
         {
-            WriteLine("{0} has {1} children.", p.LastName, p.Children?.Count ?? 0);
+            WriteLine("{0} has {1} children.", person.LastName, person.Children?.Count ?? 0);
+        }
+    }
+}
+
+SectionTitle("Serializing with JSON");
+string jsonPath = Combine(CurrentDirectory, "people.json");
+using (StreamWriter jsonStream = File.CreateText(jsonPath))
+{
+    new JsonSerializer().Serialize(jsonStream, people);
+}
+
+OutputFileInfo(jsonPath);
+
+SectionTitle("Deserializing JSON files");
+await using (var jsonLoad = File.Open(jsonPath, FileMode.Open))
+{
+    if (await FastJson.DeserializeAsync(
+            utf8Json: jsonLoad,
+            returnType: typeof(List<Person>)) is List<Person> loadedPeople)
+    {
+        foreach (Person person in loadedPeople)
+        {
+            WriteLine("{0} has {1} children.", person.LastName, person.Children?.Count ?? 0);
         }
     }
 }
