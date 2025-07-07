@@ -41,20 +41,19 @@ List<Person> people =
 
 SectionTitle("Serializing as XML");
 XmlSerializer xmlSerializer = new(type: people.GetType());
-string path = Combine(CurrentDirectory, "people.xml");
-using (FileStream stream = File.Create(path))
+var path = Combine(CurrentDirectory, "people.xml");
+await using (var stream = File.Create(path))
 {
     xmlSerializer.Serialize(stream, people);
 }
-
 OutputFileInfo(path);
 
 SectionTitle("Deserializing XML files");
-using (FileStream xmlLoad = File.Open(path, FileMode.Open))
+await using (var xmlLoad = File.Open(path, FileMode.Open))
 {
     if (xmlSerializer.Deserialize(xmlLoad) is List<Person> loadedPeople)
     {
-        foreach (Person person in loadedPeople)
+        foreach (var person in loadedPeople)
         {
             WriteLine("{0} has {1} children.", person.LastName, person.Children?.Count ?? 0);
         }
@@ -62,12 +61,11 @@ using (FileStream xmlLoad = File.Open(path, FileMode.Open))
 }
 
 SectionTitle("Serializing with JSON");
-string jsonPath = Combine(CurrentDirectory, "people.json");
-using (StreamWriter jsonStream = File.CreateText(jsonPath))
+var jsonPath = Combine(CurrentDirectory, "people.json");
+await using (var jsonStream = File.CreateText(jsonPath))
 {
     new JsonSerializer().Serialize(jsonStream, people);
-}
-
+} 
 OutputFileInfo(jsonPath);
 
 SectionTitle("Deserializing JSON files");
@@ -77,7 +75,7 @@ await using (var jsonLoad = File.Open(jsonPath, FileMode.Open))
             utf8Json: jsonLoad,
             returnType: typeof(List<Person>)) is List<Person> loadedPeople)
     {
-        foreach (Person person in loadedPeople)
+        foreach (var person in loadedPeople)
         {
             WriteLine("{0} has {1} children.", person.LastName, person.Children?.Count ?? 0);
         }
